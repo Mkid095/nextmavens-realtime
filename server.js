@@ -125,12 +125,11 @@ const middleware = postgraphile(pgPool, 'public', {
   // Show error stack (disable in production)
   showErrorStack: true,
 
-  // JWT authentication options
-  jwtSecret: JWT_SECRET,
-  jwtPgTypeIdentifier: 'jwt_token',
+  // PgSettings function for RLS (manual JWT handling)
+  pgSettings: pgSettings,
 
-  // PgSettings function for RLS
-  pgSettings: pgSettings
+  // Retry on init fail instead of exiting
+  retryOnInitFail: true
 });
 
 // Apply Postgraphile middleware
