@@ -1,16 +1,16 @@
 services:
-  graphql:
+  realtime:
     build: .
-    container_name: nextmavens-graphql
+    # container_name: nextmavens-realtime
     env_file:
       - .env
     environment:
-      - PORT=${PORT:-4004}
+      - PORT=${PORT:-4003}
       - DATABASE_URL=${DATABASE_URL}
       - JWT_SECRET=${JWT_SECRET}
       - NODE_ENV=${NODE_ENV:-production}
     ports:
-      - "4004:4004"
+      - "4003:4003"
     restart: unless-stopped
     networks:
       - dokploy-network
