@@ -4,7 +4,7 @@ services:
     container_name: nextmavens-graphql
     environment:
       - PORT=4004
-      - DATABASE_URL=postgresql://nextmavens:Elishiba@95@nextmavens-db-m4sxnf.1.mvuvh68efk7jnvynmv8r2jm2u:5432/nextmavens
+      - DATABASE_URL=postgresql://nextmavens:Elishiba@95@nextmavens-db-m4sxnf:5432/nextmavens
       - JWT_SECRET=nextmavens-auth-secret-key-2024-production-secure
     ports:
       - "4004:4004"
